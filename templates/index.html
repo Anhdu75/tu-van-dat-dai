@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tư vấn thủ tục đất đai</title>
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
+    padding:30px;
+}
+.box {
+    background:#ffffff;
+    max-width:760px;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+h2 {
+    text-align:center;
+    color:#1a73e8;
+}
+h3 {
+    margin-top:25px;
+    color:#333;
+}
+label {
+    display:block;
+    margin:8px 0;
+}
+select, button {
+    padding:10px;
+    font-size:15px;
+    margin-top:8px;
+}
+button {
+    background:#1a73e8;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover {
+    background:#1558b0;
+}
+.tip {
+    display:none;
+    background:#eef4ff;
+    padding:10px;
+    margin:6px 0 12px 22px;
+    border-left:4px solid #1a73e8;
+    font-size:14px;
+}
+.result {
+    background:#f1f8ff;
+    padding:20px;
+    border-left:5px solid #1a73e8;
+    margin-top:25px;
+}
+.support {
+    background:#fff8e1;
+    padding:20px;
+    border-left:5px solid #f4b400;
+    margin-top:25px;
+}
+.pay {
+    display:none;
+    background:#fff3f3;
+    padding:20px;
+    border:1px solid #f28b82;
+    border-radius:8px;
+    margin-top:20px;
+}
+ul {
+    margin-left:20px;
+}
+</style>
+
+<script>
+function toggleTip(id){
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+</script>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>📄 TƯ VẤN THỦ TỤC ĐẤT ĐAI</h2>
+
+<form method="post" action="/xu-ly">
+
+<h3>1️⃣ Anh/chị đang cần làm thủ tục gì?</h3>
+<select name="loai_giao_dich" required>
+    <option value="cho_tang">Cho tặng quyền sử dụng đất</option>
+    <option value="chuyen_nhuong">Chuyển nhượng (mua bán – sang tên)</option>
+    <option value="thua_ke">Thừa kế quyền sử dụng đất</option>
+</select>
+
+<h3>2️⃣ Tình trạng pháp lý hiện tại của thửa đất</h3>
+
+<label>
+<input type="checkbox" name="nguoi_con_song" onchange="toggleTip('t1')">
+Người để lại / cho đất còn sống
+</label>
+<div id="t1" class="tip">
+⚠️ Nếu người này còn sống thì <b>chưa phát sinh thừa kế</b>.  
+Trường hợp này thường phải làm <b>cho tặng hoặc chuyển nhượng</b>.
+</div>
+
+<label>
+<input type="checkbox" name="co_so_do" onchange="toggleTip('t2')">
+Đã có Giấy chứng nhận (Sổ đỏ)
+</label>
+<div id="t2" class="tip">
+📌 Đây là <b>điều kiện bắt buộc</b>.  
+❌ Không có sổ đỏ → hồ sơ chắc chắn bị trả.
+</div>
+
+<label>
+<input type="checkbox" name="dang_tranh_chap" onchange="toggleTip('t3')">
+Đất đang có tranh chấp
+</label>
+<div id="t3" class="tip">
+❌ Mọi thủ tục sẽ <b>bị dừng giải quyết</b> cho đến khi tranh chấp được xử lý xong.
+</div>
+
+<label>
+<input type="checkbox" name="dang_the_chap" onchange="toggleTip('t4')">
+Đất đang thế chấp ngân hàng
+</label>
+<div id="t4" class="tip">
+❌ Không công chứng được khi chưa giải chấp.  
+👉 Cần làm thủ tục giải chấp trước.
+</div>
+
+<label>
+<input type="checkbox" name="dong_so_huu" onchange="toggleTip('t5')">
+Đất có nhiều người cùng đứng tên
+</label>
+<div id="t5" class="tip">
+📌 Phải có <b>đầy đủ chữ ký của tất cả người đứng tên</b>.  
+Thiếu 1 người → hồ sơ bị trả.
+</div>
+
+<label>
+<input type="checkbox" name="tat_ca_dong_y">
+Tất cả đồng sở hữu đều đồng ý
+</label>
+
+<label>
+<input type="checkbox" name="tu_nguyen">
+Việc cho tặng hoàn toàn tự nguyện
+</label>
+
+<h3>3️⃣ Quan hệ nhân thân với người để lại / cho đất</h3>
+<select name="quan_he_nhan_than" required>
+    <option value="vo_chong">Vợ / Chồng</option>
+    <option value="cha_me_con">Cha mẹ – Con</option>
+    <option value="ong_ba_chau">Ông bà – Cháu</option>
+    <option value="anh_em_ruot">Anh / Chị / Em ruột</option>
+    <option value="khac">Không thuộc diện miễn thuế</option>
+</select>
+
+<div class="tip" style="display:block; background:#fffbe6; border-left-color:#fbbc04;">
+💰 Quan hệ nhân thân ảnh hưởng trực tiếp đến việc <b>miễn hay phải nộp thuế</b>.
+</div>
+
+<br>
+<button type="submit">👉 XEM KẾT QUẢ TƯ VẤN</button>
+</form>
+
+{% if ket_qua %}
+<div class="result">
+<h3>📌 KẾT QUẢ TƯ VẤN SƠ BỘ</h3>
+<p style="font-size:14px;color:#555;">
+Kết quả dưới đây được phân tích dựa trên <b>quy định pháp luật hiện hành</b>  
+và <b>thực tế xử lý hồ sơ tại địa phương</b>.
+</p>
+
+<p><b>{{ ket_qua.ket_luan }}</b></p>
+
+{% if ket_qua.ly_do %}
+<p style="color:#b00020;">
+⚠️ Những nội dung sau là <b>lý do phổ biến khiến hồ sơ bị trả lại</b>:
+</p>
+<ul>
+{% for l in ket_qua.ly_do %}
+<li>{{ l }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if ket_qua.huong_xu_ly %}
+<p><b>Hướng xử lý thực tế:</b></p>
+<ul>
+{% for h in ket_qua.huong_xu_ly %}
+<li>{{ h }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+
+<div class="support">
+<h3>🔔 HỖ TRỢ CHI TIẾT THEO ĐÚNG TRƯỜNG HỢP CỦA ANH/CHỊ</h3>
+
+<p>
+Kết quả trên giúp anh/chị <b>biết sơ bộ có làm được hay không</b>.  
+Tuy nhiên, trong thực tế:
+</p>
+
+<ul>
+<li>Cùng một thủ tục nhưng <b>mỗi hoàn cảnh lại có yêu cầu khác nhau</b></li>
+<li>Nhiều hồ sơ <b>tưởng đủ điều kiện</b> nhưng vẫn bị trả</li>
+<li>Chi phí thực tế thường <b>cao hơn dự tính</b> nếu không chuẩn bị trước</li>
+</ul>
+
+<p>
+👉 Nếu anh/chị muốn biết <b>CHÍNH XÁC</b>:
+</p>
+
+<ul>
+<li>Cần chuẩn bị <b>đúng và đủ giấy tờ</b></li>
+<li>Đi theo <b>đúng trình tự từng bước</b></li>
+<li>Ước tính trước <b>toàn bộ chi phí thực tế</b></li>
+</ul>
+
+<button onclick="document.getElementById('pay').style.display='block'">
+👉 NHẬN HƯỚNG DẪN CHI TIẾT CHO TRƯỜNG HỢP CỦA TÔI (49.000đ)
+</button>
+</div>
+<button
+    onclick="
+        document.getElementById('pay').style.display='block';
+        hienTaiLieu();
+    "
+    style="
+        background:#d93025;
+        color:#fff;
+        border:none;
+        padding:14px 22px;
+        font-size:17px;
+        border-radius:8px;
+        cursor:pointer;
+        margin-top:10px;
+    ">
+    💳 THANH TOÁN & NHẬN TÀI LIỆU
+</button>
+
+<div id="pay" class="pay">
+<h3>💳 THANH TOÁN & NHẬN TÀI LIỆU</h3>
+
+<p>📘 Sau khi thanh toán, anh/chị sẽ nhận được:</p>
+<ul>
+<li>Danh sách giấy tờ <b>đúng với trường hợp của mình</b></li>
+<li>Trình tự đi từng bước, <b>không phải hỏi thêm</b></li>
+<li>Lưu ý lỗi thường gặp để <b>tránh bị trả hồ sơ</b></li>
+</ul>
+
+<p><b>Phí hỗ trợ:</b> 49.000đ</p>
+<ul>
+<li>Ngân hàng: <b>LPBank</b></li>
+<li>Số tài khoản: <b>033963180001</b></li>
+<li>Chủ tài khoản: <b>Đinh Văn Dư</b></li>
+<li>Nội dung chuyển khoản: <b>HOTRO HOSO + SĐT</b></li>
+</ul>
+
+<p>
+👉 Gửi ảnh xác nhận qua Zalo:  
+<a href="https://zalo.me/0368869160" target="_blank">
+0368 869 160 (Nhấn để chat)
+</a>
+</p>
+<div id="tai-lieu" style="display:none; margin-top:20px;">
+    <hr>
+    <h3>📥 TẢI TÀI LIỆU HƯỚNG DẪN</h3>
+
+    <div id="pdf-cho-tang" style="display:none;">
+        <a href="/static/pdf/cho-tang.pdf" target="_blank">
+            📘 Tải hướng dẫn CHO TẶNG (PDF)
+        </a>
+    </div>
+
+    <div id="pdf-chuyen-nhuong" style="display:none;">
+        <a href="/static/pdf/chuyen-nhuong.pdf" target="_blank">
+            📕 Tải hướng dẫn CHUYỂN NHƯỢNG (PDF)
+        </a>
+    </div>
+
+    <div id="pdf-thua-ke" style="display:none;">
+        <a href="/static/pdf/thua-ke.pdf" target="_blank">
+            📗 Tải hướng dẫn THỪA KẾ (PDF)
+        </a>
+    </div>
+</div>
+
+
+</div>
+{% endif %}
+
+</div>
+<script>
+function hienTaiLieu() {
+    const loai = document.querySelector('select[name="loai_giao_dich"]').value;
+
+    document.getElementById("tai-lieu").style.display = "block";
+    document.getElementById("pdf-cho-tang").style.display = "none";
+    document.getElementById("pdf-chuyen-nhuong").style.display = "none";
+    document.getElementById("pdf-thua-ke").style.display = "none";
+
+    if (loai === "cho_tang") {
+        document.getElementById("pdf-cho-tang").style.display = "block";
+    }
+    if (loai === "chuyen_nhuong") {
+        document.getElementById("pdf-chuyen-nhuong").style.display = "block";
+    }
+    if (loai === "thua_ke") {
+        document.getElementById("pdf-thua-ke").style.display = "block";
+    }
+}
+</script>
+<div style="
+    max-width:700px;
+    margin:40px auto;
+    padding:30px;
+    background:#f1f8ff;
+    border-radius:10px;
+    border:1px solid #cce0ff;
+">
+
+    <h2 style="color:#0b57d0;">🙏 CẢM ƠN BẠN ĐÃ SỬ DỤNG DỊCH VỤ</h2>
+
+    <p>
+        Chúng tôi đã chuẩn bị tài liệu hướng dẫn chi tiết
+        <b>đúng với trường hợp của bạn</b>.
+    </p>
+
+    <p>
+        👉 Vui lòng tải tài liệu bên dưới và làm theo từng bước.
+    </p>
+
+    <!-- LINK PDF (dùng lại khối ở trên) -->
+
+    <hr>
+
+    <p style="font-size:14px; color:#444;">
+        📌 Lưu ý:
+        <ul>
+            <li>Đọc kỹ phần giấy tờ cần chuẩn bị</li>
+            <li>Làm đúng thứ tự để tránh bị trả hồ sơ</li>
+            <li>Nếu có vướng mắc, hãy liên hệ Zalo hỗ trợ</li>
+        </ul>
+    </p>
+
+    <p>
+        📞 Zalo hỗ trợ:
+        <a href="https://zalo.me/0368869160" target="_blank">
+            0368 869 160
+        </a>
+    </p>
+</div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,39 @@
+{
+  "ten_nghiep_vu": "Cho tặng quyền sử dụng đất",
+  "can_cu_phap_ly": [
+    "Luật Đất đai 2013",
+    "Bộ luật Dân sự 2015",
+    "Luật Công chứng 2014"
+  ],
+  "dieu_kien": [
+    "Có Giấy chứng nhận quyền sử dụng đất",
+    "Đất không có tranh chấp",
+    "Quyền sử dụng đất không bị kê biên",
+    "Đang trong thời hạn sử dụng đất",
+    "Việc cho tặng phải lập thành hợp đồng và công chứng"
+  ],
+  "doi_tuong_mien_thue": [
+    "Cha mẹ cho con",
+    "Ông bà cho cháu",
+    "Vợ chồng cho nhau",
+    "Anh chị em ruột cho nhau"
+  ],
+  "thue_phi": {
+    "thue_thu_nhap_ca_nhan": "10% (được miễn nếu thuộc diện miễn)",
+    "le_phi_truoc_ba": "0.5%",
+    "phi_cong_chung": "Theo giá trị thửa đất"
+  },
+  "ho_so_can_chuan_bi": [
+    "Giấy chứng nhận quyền sử dụng đất",
+    "CMND/CCCD của bên cho và bên nhận",
+    "Sổ hộ khẩu",
+    "Giấy tờ chứng minh quan hệ (nếu xin miễn thuế)",
+    "Hợp đồng cho tặng"
+  ],
+  "rui_ro_thuong_gap": [
+    "Cho tặng nhưng che giấu mua bán",
+    "Không chứng minh được quan hệ để miễn thuế",
+    "Đất đang thế chấp ngân hàng",
+    "Cho tặng khi người cho không đủ năng lực hành vi"
+  ]
+}
