@@ -2,50 +2,39 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Tư vấn thủ tục đất đai</title>
+<title>Tư vấn thủ tục đất đai | Hướng dẫn đúng – đủ – không bị trả hồ sơ</title>
 
 <style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    font-family:Arial, Helvetica, sans-serif;
     background:#f4f6f8;
     padding:30px;
 }
-.box {
-    background:#ffffff;
-    max-width:760px;
+.box{
+    max-width:820px;
     margin:auto;
+    background:#fff;
     padding:30px;
     border-radius:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
-h2 {
-    text-align:center;
-    color:#1a73e8;
-}
-h3 {
-    margin-top:25px;
-    color:#333;
-}
-label {
-    display:block;
-    margin:8px 0;
-}
-select, button {
-    padding:10px;
+h2{color:#1a73e8;text-align:center;}
+h3{margin-top:25px;color:#333;}
+label{display:block;margin:8px 0;}
+select,button{
+    padding:12px;
     font-size:15px;
-    margin-top:8px;
+    margin-top:10px;
 }
-button {
+button{
     background:#1a73e8;
     color:#fff;
     border:none;
-    border-radius:6px;
+    border-radius:8px;
     cursor:pointer;
 }
-button:hover {
-    background:#1558b0;
-}
-.tip {
+button:hover{background:#1558b0;}
+.tip{
     display:none;
     background:#eef4ff;
     padding:10px;
@@ -53,63 +42,45 @@ button:hover {
     border-left:4px solid #1a73e8;
     font-size:14px;
 }
-.result {
-    background:#f1f8ff;
-    padding:20px;
-    border-left:5px solid #1a73e8;
+.result,.support,.pay,.thanks{
     margin-top:25px;
-}
-.support {
-    background:#fff8e1;
-    padding:20px;
-    border-left:5px solid #f4b400;
-    margin-top:25px;
-}
-.pay {
-    display:none;
-    background:#fff3f3;
-    padding:20px;
-    border:1px solid #f28b82;
-    border-radius:8px;
-    margin-top:20px;
-}
-#tai-lieu {
-    display:none;
-    background:#f1f8ff;
     padding:20px;
     border-radius:8px;
-    margin-top:25px;
 }
-ul { margin-left:20px; }
+.result{background:#f1f8ff;border-left:5px solid #1a73e8;}
+.support{background:#fff8e1;border-left:5px solid #f4b400;}
+.pay{display:none;background:#fff3f3;border:1px solid #f28b82;}
+.thanks{display:none;background:#f1f8ff;border:1px solid #cce0ff;}
+ul{margin-left:20px;}
+.trust{
+    background:#f8fbff;
+    border:1px solid #dbe7ff;
+    padding:18px;
+    border-radius:8px;
+    margin:20px 0;
+    font-size:14px;
+}
 </style>
 
 <script>
 function toggleTip(id){
-    const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
-}
-
-function hienThanhToan(){
-    document.getElementById("pay").style.display = "block";
+    const el=document.getElementById(id);
+    el.style.display=(el.style.display==="block")?"none":"block";
 }
 
 function hienTaiLieu(){
-    const loai = document.querySelector('select[name="loai_giao_dich"]').value;
+    const loai=document.querySelector('select[name="loai_giao_dich"]').value;
 
-    document.getElementById("tai-lieu").style.display = "block";
-    document.getElementById("pdf-cho-tang").style.display = "none";
-    document.getElementById("pdf-chuyen-nhuong").style.display = "none";
-    document.getElementById("pdf-thua-ke").style.display = "none";
+    document.getElementById("pay").style.display="none";
+    document.getElementById("tai-lieu").style.display="block";
+    document.getElementById("thanks").style.display="block";
 
-    if (loai === "cho_tang") {
-        document.getElementById("pdf-cho-tang").style.display = "block";
-    }
-    if (loai === "chuyen_nhuong") {
-        document.getElementById("pdf-chuyen-nhuong").style.display = "block";
-    }
-    if (loai === "thua_ke") {
-        document.getElementById("pdf-thua-ke").style.display = "block";
-    }
+    ["pdf-cho-tang","pdf-chuyen-nhuong","pdf-thua-ke"]
+        .forEach(id=>document.getElementById(id).style.display="none");
+
+    if(loai==="cho_tang") document.getElementById("pdf-cho-tang").style.display="block";
+    if(loai==="chuyen_nhuong") document.getElementById("pdf-chuyen-nhuong").style.display="block";
+    if(loai==="thua_ke") document.getElementById("pdf-thua-ke").style.display="block";
 }
 </script>
 </head>
@@ -119,113 +90,120 @@ function hienTaiLieu(){
 
 <h2>📄 TƯ VẤN THỦ TỤC ĐẤT ĐAI</h2>
 
+<div class="trust">
+<b>🔒 Cam kết chuyên môn & minh bạch</b>
+<ul>
+<li>Nội dung tư vấn dựa trên <b>thực tế xử lý hồ sơ nhiều năm</b>, không chung chung</li>
+<li>Hướng dẫn đúng trình tự để <b>tránh bị trả hồ sơ, mất thời gian</b></li>
+<li>Phù hợp quy định pháp luật hiện hành và cách làm tại địa phương</li>
+<li>Chỉ thu phí khi anh/chị <b>tự nguyện cần hướng dẫn chi tiết</b></li>
+</ul>
+</div>
+
 <form method="post" action="/xu-ly">
 
 <h3>1️⃣ Anh/chị đang cần làm thủ tục gì?</h3>
 <select name="loai_giao_dich" required>
-    <option value="cho_tang">Cho tặng quyền sử dụng đất</option>
-    <option value="chuyen_nhuong">Chuyển nhượng (mua bán – sang tên)</option>
-    <option value="thua_ke">Thừa kế quyền sử dụng đất</option>
+<option value="cho_tang">Cho tặng quyền sử dụng đất</option>
+<option value="chuyen_nhuong">Chuyển nhượng (mua bán – sang tên)</option>
+<option value="thua_ke">Thừa kế quyền sử dụng đất</option>
 </select>
 
-<h3>2️⃣ Tình trạng pháp lý</h3>
+<h3>2️⃣ Tình trạng pháp lý thửa đất</h3>
 
-<label><input type="checkbox" name="nguoi_con_song" onchange="toggleTip('t1')"> Người cho / để lại đất còn sống</label>
-<div id="t1" class="tip">⚠️ Chưa phát sinh thừa kế → chuyển sang cho tặng hoặc chuyển nhượng</div>
+<label><input type="checkbox" name="co_so_do" onchange="toggleTip('t1')"> Đã có sổ đỏ</label>
+<div id="t1" class="tip">📌 Không có sổ đỏ → <b>không công chứng, không sang tên được</b>.</div>
 
-<label><input type="checkbox" name="co_so_do" onchange="toggleTip('t2')"> Đã có sổ đỏ</label>
-<div id="t2" class="tip">📌 Không có sổ → hồ sơ chắc chắn bị trả</div>
+<label><input type="checkbox" name="dang_tranh_chap" onchange="toggleTip('t2')"> Đang tranh chấp</label>
+<div id="t2" class="tip">⚠️ Tranh chấp chưa xong → <b>văn phòng đăng ký từ chối tiếp nhận</b>.</div>
 
-<label><input type="checkbox" name="dang_tranh_chap" onchange="toggleTip('t3')"> Đang tranh chấp</label>
-<div id="t3" class="tip">❌ Phải giải quyết xong tranh chấp</div>
+<label><input type="checkbox" name="dang_the_chap" onchange="toggleTip('t3')"> Đang thế chấp</label>
+<div id="t3" class="tip">❌ Phải giải chấp xong mới làm tiếp.</div>
 
-<label><input type="checkbox" name="dang_the_chap" onchange="toggleTip('t4')"> Đang thế chấp ngân hàng</label>
-<div id="t4" class="tip">❌ Phải giải chấp trước</div>
-
-<label><input type="checkbox" name="dong_so_huu" onchange="toggleTip('t5')"> Nhiều người đứng tên</label>
-<div id="t5" class="tip">📌 Phải đủ chữ ký tất cả đồng sở hữu</div>
-
-<label><input type="checkbox" name="tat_ca_dong_y"> Tất cả đồng sở hữu đồng ý</label>
-<label><input type="checkbox" name="tu_nguyen"> Hoàn toàn tự nguyện</label>
+<label><input type="checkbox" name="dong_so_huu" onchange="toggleTip('t4')"> Nhiều người cùng đứng tên</label>
+<div id="t4" class="tip">📌 Thiếu 1 chữ ký → <b>hồ sơ bị trả ngay</b>.</div>
 
 <h3>3️⃣ Quan hệ nhân thân</h3>
 <select name="quan_he_nhan_than" required>
-    <option value="vo_chong">Vợ / Chồng</option>
-    <option value="cha_me_con">Cha mẹ – Con</option>
-    <option value="ong_ba_chau">Ông bà – Cháu</option>
-    <option value="anh_em_ruot">Anh chị em ruột</option>
-    <option value="khac">Không thuộc diện miễn thuế</option>
+<option value="vo_chong">Vợ / Chồng</option>
+<option value="cha_me_con">Cha mẹ – Con</option>
+<option value="anh_em_ruot">Anh / Chị / Em ruột</option>
+<option value="khac">Không thuộc diện miễn thuế</option>
 </select>
 
-<br><br>
+<br>
 <button type="submit">👉 XEM KẾT QUẢ TƯ VẤN</button>
 </form>
 
 {% if ket_qua %}
 <div class="result">
-<h3>📌 KẾT QUẢ TƯ VẤN</h3>
+<h3>📌 KẾT QUẢ TƯ VẤN SƠ BỘ</h3>
 <p><b>{{ ket_qua.ket_luan }}</b></p>
-
-{% if ket_qua.ly_do %}
-<ul>
-{% for l in ket_qua.ly_do %}
-<li>{{ l }}</li>
-{% endfor %}
-</ul>
-{% endif %}
-
-{% if ket_qua.huong_xu_ly %}
 <ul>
 {% for h in ket_qua.huong_xu_ly %}
 <li>{{ h }}</li>
 {% endfor %}
 </ul>
-{% endif %}
 </div>
 
 <div class="support">
-<h3>🔔 HƯỚNG DẪN CHI TIẾT</h3>
-<p>👉 Nhận tài liệu chuẩn hồ sơ – tránh bị trả</p>
-<button onclick="hienThanhToan()">💳 THANH TOÁN & NHẬN TÀI LIỆU (49.000đ)</button>
+<h3>🔔 HỖ TRỢ CHI TIẾT THEO ĐÚNG TRƯỜNG HỢP</h3>
+<p>
+👉 Nếu anh/chị muốn biết <b>chính xác từng giấy tờ, từng bước đi</b>  
+để <b>làm một lần là xong</b>, không phải hỏi thêm:
+</p>
+
+<button onclick="document.getElementById('pay').style.display='block'">
+💳 NHẬN HƯỚNG DẪN CHI TIẾT (49.000đ)
+</button>
 </div>
 
 <div id="pay" class="pay">
 <h3>💳 THANH TOÁN</h3>
 <ul>
 <li>Ngân hàng: <b>LPBank</b></li>
-<li>STK: <b>033963180001</b></li>
+<li>Số TK: <b>033963180001</b></li>
 <li>Chủ TK: <b>Đinh Văn Dư</b></li>
-<li>Nội dung: <b>HOTRO HOSO + SĐT</b></li>
+<li>Nội dung: <b>HOTRO + SĐT</b></li>
 </ul>
 
-<p>📸 Gửi ảnh xác nhận qua Zalo:
-<a href="https://zalo.me/0368869160" target="_blank">0368 869 160</a>
+<button onclick="hienTaiLieu()">
+👉 Tôi đã thanh toán – Nhận tài liệu
+</button>
+</div>
+
+<div id="tai-lieu" style="display:none">
+<h3>📥 TẢI TÀI LIỆU HƯỚNG DẪN</h3>
+
+<div id="pdf-cho-tang" style="display:none">
+<a href="/static/pdf/cho-tang.pdf" target="_blank">📘 PDF Cho tặng</a>
+</div>
+<div id="pdf-chuyen-nhuong" style="display:none">
+<a href="/static/pdf/chuyen-nhuong.pdf" target="_blank">📕 PDF Chuyển nhượng</a>
+</div>
+<div id="pdf-thua-ke" style="display:none">
+<a href="/static/pdf/thua-ke.pdf" target="_blank">📗 PDF Thừa kế</a>
+</div>
+</div>
+
+<div id="thanks" class="thanks">
+<h3>🙏 CẢM ƠN ANH/CHỊ</h3>
+<p>
+Tài liệu trên được biên soạn <b>đúng với trường hợp của anh/chị</b>.  
+Chỉ cần làm theo từng bước là có thể nộp hồ sơ.
 </p>
-
-<button onclick="hienTaiLieu()">✅ Tôi đã chuyển khoản – Nhận tài liệu</button>
+<p>
+📞 Cần hỗ trợ thêm:  
+<a href="https://zalo.me/0368869160" target="_blank">Zalo 0368 869 160</a>
+</p>
 </div>
-
-<div id="tai-lieu">
-<h3>📥 TẢI TÀI LIỆU</h3>
-
-<div id="pdf-cho-tang">
-<a href="/static/pdf/cho-tang.pdf" target="_blank">📘 Hướng dẫn CHO TẶNG</a>
-</div>
-
-<div id="pdf-chuyen-nhuong">
-<a href="/static/pdf/chuyen-nhuong.pdf" target="_blank">📕 Hướng dẫn CHUYỂN NHƯỢNG</a>
-</div>
-
-<div id="pdf-thua-ke">
-<a href="/static/pdf/thua-ke.pdf" target="_blank">📗 Hướng dẫn THỪA KẾ</a>
-</div>
-</div>
-
 {% endif %}
 
 </div>
 </body>
 </html>
+
+
 
 
 
